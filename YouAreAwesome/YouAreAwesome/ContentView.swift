@@ -40,22 +40,31 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
             
             Spacer()
-            
-            Button("Show Message") {
-                // This is the action performed when the button is pressed
-                let messageAwesome = "You Are Awesome!"
-                let messageGreat = "You Are Great!"
-                
-                messageString = messageString.isEmpty ? messageAwesome : messageString == messageAwesome ? messageGreat : messageAwesome
-                
-                imageName = "image\(imageNumber)"
-                imageNumber += 1
-                if imageNumber > 9 {
-                    imageNumber = 0
+            HStack {
+                Button("Show Message") {
+                    // This is the action performed when the button is pressed
+                    let messageAwesome = "You Are Awesome!"
+                    let messageGreat = "You Are Great!"
+                    
+                    messageString = messageString.isEmpty ? messageAwesome : messageString == messageAwesome ? messageGreat : messageAwesome
+                    
+                    imageName = "image\(imageNumber)"
+                    imageNumber += 1
+                    if imageNumber > 9 {
+                        imageNumber = 0
+                    }
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                
+                Button("Clear") {
+                    // This is the action performed when the button is pressed
+                    messageString = ""
+                    imageName = ""
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.indigo)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.green)
         }
         .padding()
     }

@@ -40,6 +40,7 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
             
             Spacer()
+            
             HStack {
                 Button("Show Message") {
                     // This is the action performed when the button is pressed
@@ -54,7 +55,6 @@ struct ContentView: View {
                         imageNumber = 0
                     }
                 }
-                .buttonStyle(.borderedProminent)
                 .tint(.green)
                 
                 Button("Clear") {
@@ -62,9 +62,10 @@ struct ContentView: View {
                     messageString = ""
                     imageName = ""
                 }
-                .buttonStyle(.borderedProminent)
                 .tint(.indigo)
             }
+            .buttonStyle(.borderedProminent)
+            .font(.title2)
         }
         .padding()
     }

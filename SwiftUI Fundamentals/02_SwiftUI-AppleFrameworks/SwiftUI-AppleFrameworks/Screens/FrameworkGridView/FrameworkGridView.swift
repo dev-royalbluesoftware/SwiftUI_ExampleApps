@@ -14,12 +14,12 @@ struct FrameworkGridView: View {
     
     // MARK: - Properties
     
-    let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @StateObject var viewModel = FrameworkGridViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: viewModel.columns) {
                     ForEach(MockData.frameworks) { framework in
                         NavigationLink(value: framework) {
                             FrameworkTitleView(frameWork: framework)

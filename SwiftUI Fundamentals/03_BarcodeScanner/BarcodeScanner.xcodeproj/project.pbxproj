@@ -6,7 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2C4E1DFB2D3F3E0B0072FC3D /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1DF72D3F3E0B0072FC3D /* BarcodeScannerView.swift */; };
+		2C4E1DFF2D3F3E830072FC3D /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1DFE2D3F3E830072FC3D /* ScannerVC.swift */; };
+		2C4E1E062D3F45100072FC3D /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1E052D3F45100072FC3D /* ScannerView.swift */; };
+		2C4E1E0A2D3F4FC50072FC3D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1E092D3F4FC50072FC3D /* Alert.swift */; };
+		2C4E1E0C2D3F50140072FC3D /* BarcodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1E0B2D3F50140072FC3D /* BarcodeScannerViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		2C4E1DF72D3F3E0B0072FC3D /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		2C4E1DFE2D3F3E830072FC3D /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		2C4E1E052D3F45100072FC3D /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		2C4E1E092D3F4FC50072FC3D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		2C4E1E0B2D3F50140072FC3D /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		2C9301E42D3B889100610443 /* BarcodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,10 +42,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4E1DFC2D3F3E2A0072FC3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E1DFD2D3F3E610072FC3D /* UIKitComponents */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C4E1DFD2D3F3E610072FC3D /* UIKitComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E1DFE2D3F3E830072FC3D /* ScannerVC.swift */,
+				2C4E1E052D3F45100072FC3D /* ScannerView.swift */,
+			);
+			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		2C4E1E0E2D3F52B60072FC3D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E1E102D3F52D30072FC3D /* BarcodeScanner */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2C4E1E102D3F52D30072FC3D /* BarcodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E1DF72D3F3E0B0072FC3D /* BarcodeScannerView.swift */,
+				2C4E1E0B2D3F50140072FC3D /* BarcodeScannerViewModel.swift */,
+			);
+			path = BarcodeScanner;
+			sourceTree = "<group>";
+		};
+		2C4E1E112D3F52E50072FC3D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E1E092D3F4FC50072FC3D /* Alert.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		2C9301DB2D3B889100610443 = {
 			isa = PBXGroup;
 			children = (
 				2C9301E62D3B889100610443 /* BarcodeScanner */,
+				2C4E1E0E2D3F52B60072FC3D /* Screens */,
+				2C4E1DFC2D3F3E2A0072FC3D /* Views */,
+				2C4E1E112D3F52E50072FC3D /* Utilities */,
 				2C9301E52D3B889100610443 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4E1DFF2D3F3E830072FC3D /* ScannerVC.swift in Sources */,
+				2C4E1E0C2D3F50140072FC3D /* BarcodeScannerViewModel.swift in Sources */,
+				2C4E1E062D3F45100072FC3D /* ScannerView.swift in Sources */,
+				2C4E1E0A2D3F4FC50072FC3D /* Alert.swift in Sources */,
+				2C4E1DFB2D3F3E0B0072FC3D /* BarcodeScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

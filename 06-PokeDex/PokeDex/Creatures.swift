@@ -17,7 +17,7 @@ class Creatures: Codable {
     
     private struct Returned: Codable {
         var count: Int
-        var next: String  // TODO: want to change to optional, coming later
+        var next: String? // needs to be optional because last page (next = null)
         var results: [Creature]
     }
     
@@ -26,16 +26,18 @@ class Creatures: Codable {
     var urlString = "https://pokeapi.co/api/v2/pokemon"
     var count = 0
     var creaturesArray: [Creature] = []
-    
+    var isLoading = false
     
     // MARK: - Get Data Function
     
     func getData() async {
         print("🕸️, This is the expected url: \(urlString)" )
+        isLoading = true
         
         // Create URL
         guard let url = URL(string: urlString) else {
             print("🚫, ERROR: Could not create URL from \(urlString)")
+            isLoading = false
             return
         }
         
@@ -46,14 +48,30 @@ class Creatures: Codable {
             // Try to decode the JSON data into our data structure
             guard let returned = try? JSONDecoder().decode(Returned.self, from: data) else {
                 print("🚫, ERROR: Could not decode returned JSON data.")
+                isLoading = false
                 return
             }
-            self.count = returned.count
-            self.urlString = returned.next
-            self.creaturesArray = returned.results
+            Task { @MainActor in
+                self.count = returned.count
+                self.urlString = returned.next ?? ""
+                self.creaturesArray = self.creaturesArray + returned.results
+                isLoading = false
+            }
             
         } catch {
             print("🚫, ERROR: Could not get data from \(urlString)")
+            isLoading = false
+        }
+    }
+    
+    // MARK: - Load All Function
+    
+    func loadAll() async {
+        Task { @MainActor in
+            guard urlString.hasPrefix("http") else { return }
+            
+            await getData() // get next page of data
+            await loadAll() // call loadAll again - will stop when all pages are retrieved
         }
     }
 }

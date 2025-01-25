@@ -14,7 +14,7 @@ import SwiftUI
 struct PokeDexApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CreaturesListView()
         }
     }
 }

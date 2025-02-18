@@ -1,7 +1,7 @@
 //
 //
 // Step-Tracker
-// ContentView.swift
+// DashboardView.swift
 //
 // Created by rbs-dev
 // Copyright © Royal Blue Software
@@ -27,7 +27,7 @@ enum HealthMetricContext: CaseIterable, Identifiable {
     }
 }
 
-struct ContentView: View {
+struct DashboardView: View {
     
     // MARK: - @State Properties
     
@@ -99,7 +99,7 @@ struct ContentView: View {
             .padding()
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metricContext in
-                Text(metricContext.title)
+                HealthDataListView(metric: metricContext)
             }
         }
         .tint(isSteps ? .pink : .indigo)
@@ -107,5 +107,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DashboardView()
 }

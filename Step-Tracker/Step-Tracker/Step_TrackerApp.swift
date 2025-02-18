@@ -14,7 +14,7 @@ import SwiftUI
 struct Step_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DashboardView()
         }
     }
 }
